@@ -1,41 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Multifuncional</title>
-
+    <meta name="description" content="Calculadora multifuncional com operações matemáticas e histórico de cálculos.">
+    <title>CalcPro | Calculadora Multifuncional</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="calculadora">
+    <main class="container">
 
-        <h1>Calculadora Multifuncional</h1>
+        <header class="cabecalho">
+            <div class="logo">CalcPro</div>
+            <p>Sua calculadora inteligente</p>
+        </header>
 
-        <label>Número 1</label>
-        <input type="number" id="numero1">
+        <section class="calculadora">
 
-        <label>Número 2</label>
-        <input type="number" id="numero2">
+            <div class="titulo">
+                <span>CALCULADORA</span>
+                <h1>Calculadora Multifuncional</h1>
+                <p>Realize seus cálculos de maneira simples e rápida.</p>
+            </div>
 
-        <div class="botoes">
-            <button onclick="somar()">Somar</button>
-            <button onclick="subtrair()">Subtrair</button>
-            <button onclick="multiplicar()">multiplicar</button>
-            <button onclick="dividir()">dividir</button>
-        </div>
+            <div class="campos">
 
-        <h2 id="resultado">
-            Resultado:
-        </h2>
+                <div class="campo">
+                    <label for="numero1">Primeiro número</label>
+                    <input type="number" id="numero1" placeholder="Digite o primeiro número" step="any">
+                </div>
 
-    </div>
+                <div class="campo">
+                    <label for="numero2">Segundo número</label>
+                    <input type="number" id="numero2" placeholder="Digite o segundo número" step="any">
+                </div>
+
+            </div>
+
+            <div class="operacoes">
+                <h2>Operações matemáticas</h2>
+
+                <div class="botoes">
+                    <button onclick="somar()">+ Somar</button>
+                    <button onclick="subtrair()">− Subtrair</button>
+                    <button onclick="multiplicar()">× Multiplicar</button>
+                    <button onclick="dividir()">÷ Dividir</button>
+                    <button onclick="porcentagem()">% Porcentagem</button>
+                </div>
+            </div>
+
+            <div class="resultado-container">
+                <span>RESULTADO</span>
+                <h2 id="resultado">Aguardando cálculo...</h2>
+            </div>
+
+            <div class="controles">
+                <button onclick="apagarUltimo()">Apagar último resultado</button>
+                <button onclick="limpar()">Limpar calculadora</button>
+            </div>
+
+            <section class="historico">
+                <div class="historico-cabecalho">
+                    <h2>Histórico de cálculos</h2>
+                    <button onclick="limparHistorico()">Limpar histórico</button>
+                </div>
+
+                <ul id="listaHistorico">
+                    <li>Nenhum cálculo realizado.</li>
+                </ul>
+            </section>
+
+        </section>
+
+        <footer>
+            <p>CalcPro © 2026 | Calculadora Multifuncional</p>
+            <p>Projeto desenvolvido por Samuel dos Santos Silva</p>
+            <p>Baseado no projeto original de Matheus Filgueira.</p>
+        </footer>
+
+    </main>
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
