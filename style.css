@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,189 +8,241 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background: #101827;
+    color: #f1f5f9;
     min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: linear-gradient(135deg, #0f172a, #1e40af);
+    padding: 35px 20px;
 }
 
-/* Calculadora */
-.calculadora {
-    width: 400px;
-    max-width: 90%;
-
-    padding: 35px;
-
-    background: #ffffff;
-    border-radius: 20px;
-
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-
-    transition: 0.3s ease;
-}
-
-.calculadora:hover {
-    transform: translateY(-5px);
-}
-
-/* Título */
-h1 {
-    text-align: center;
-
-    margin-bottom: 30px;
-
-    color: #172554;
-
-    font-size: 28px;
-    font-weight: 700;
-}
-
-/* Labels */
-label {
-    display: block;
-
-    margin-top: 18px;
-    margin-bottom: 7px;
-
-    color: #374151;
-
-    font-size: 15px;
-    font-weight: bold;
-}
-
-/* Campos */
-input {
+.container {
     width: 100%;
-
-    padding: 13px 15px;
-
-    border: 2px solid #dbe1ea;
-    border-radius: 10px;
-
-    background: #f8fafc;
-
-    color: #111827;
-
-    font-size: 16px;
-
-    outline: none;
-
-    transition: 0.3s ease;
+    max-width: 720px;
+    margin: auto;
 }
 
-input:focus {
-    background: #ffffff;
-
-    border-color: #2563eb;
-
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+.cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-/* Área dos botões */
-.botoes {
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #38bdf8;
+    letter-spacing: -1px;
+}
+
+.cabecalho p {
+    color: #94a3b8;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.calculadora {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.titulo {
+    margin-bottom: 30px;
+}
+
+.titulo span,
+.resultado-container span {
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.titulo h1 {
+    font-size: 26px;
+    margin: 10px 0;
+}
+
+.titulo p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.campos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 18px;
+    margin-bottom: 30px;
 }
 
-/* Estilo geral dos botões */
-button {
-    padding: 14px 10px;
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-    border: none;
-    border-radius: 10px;
+.campo label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
 
+.campo input {
+    width: 100%;
+    padding: 14px;
+    background: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 9px;
     color: white;
-
     font-size: 15px;
-    font-weight: bold;
+    outline: none;
+    transition: 0.2s;
+}
 
+.campo input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
+}
+
+.operacoes h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.botoes button {
+    padding: 15px;
+    background: #334155;
+    color: white;
+    border: 1px solid #475569;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-
-    transition: 0.25s ease;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
 }
 
-/* Somar */
-button:nth-child(1) {
-    background: #16a34a;
+.botoes button:hover {
+    background: #0369a1;
+    border-color: #38bdf8;
+    transform: translateY(-2px);
 }
 
-button:nth-child(1):hover {
-    background: #15803d;
-    transform: translateY(-3px);
-}
-
-/* Subtrair */
-button:nth-child(2) {
-    background: #dc2626;
-}
-
-button:nth-child(2):hover {
-    background: #b91c1c;
-    transform: translateY(-3px);
-}
-
-/* Multiplicar */
-button:nth-child(3) {
-    background: #9333ea;
-}
-
-button:nth-child(3):hover {
-    background: #7e22ce;
-    transform: translateY(-3px);
-}
-
-/* Dividir */
-button:nth-child(4) {
-    background: #ea580c;
-}
-
-button:nth-child(4):hover {
-    background: #c2410c;
-    transform: translateY(-3px);
-}
-
-/* Efeito ao clicar */
-button:active {
-    transform: scale(0.96);
-}
-/* Resultado */
-#resultado {
+.resultado-container {
     margin-top: 28px;
-    padding: 18px;
-
-    border-radius: 10px;
-
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-
-    color: #1e3a8a;
-
-    text-align: center;
-
-    font-size: 19px;
-    font-weight: bold;
+    padding: 22px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
 }
 
-/* Responsividade */
-@media (max-width: 450px) {
+.resultado-container h2 {
+    margin-top: 12px;
+    color: #38bdf8;
+    font-size: 25px;
+    overflow-wrap: anywhere;
+}
 
-    .calculadora {
-        padding: 25px;
+.controles {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.controles button {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.controles button:hover {
+    background: #334155;
+    color: white;
+}
+
+.historico {
+    margin-top: 32px;
+    padding-top: 25px;
+    border-top: 1px solid #334155;
+}
+
+.historico-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.historico-cabecalho h2 {
+    font-size: 16px;
+}
+
+.historico-cabecalho button {
+    background: transparent;
+    border: none;
+    color: #38bdf8;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#listaHistorico {
+    list-style: none;
+}
+
+#listaHistorico li {
+    padding: 13px;
+    margin-bottom: 8px;
+    background: #0f172a;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.9;
+    margin-top: 25px;
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 20px 12px;
     }
 
-    h1 {
-        font-size: 24px;
+    .calculadora {
+        padding: 22px 17px;
+    }
+
+    .campos {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo h1 {
+        font-size: 22px;
     }
 
     .botoes {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .controles {
+        flex-direction: column;
     }
 }
